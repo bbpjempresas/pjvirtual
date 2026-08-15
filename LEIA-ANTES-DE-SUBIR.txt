@@ -1,18 +1,23 @@
-BB PJ - VERCEL PREMIUM / ARQUIVOS PLANOS
+BB PJ - VERCEL PREMIUM SEO FINAL
 
-Esta versão mantém a facilidade do GitHub:
-- nenhuma landing page fica dentro de pasta;
-- todas as páginas .html ficam na raiz;
-- CSS está embutido em cada página;
-- não depende de assets/styles.css;
-- visual responsivo e mais profissional.
+Domínio configurado:
+https://pjvirtual.vercel.app
 
-NO GITHUB:
+Arquivos SEO incluídos:
+- sitemap.xml
+- robots.txt
+- canonical em todas as páginas indexáveis
+- arquivo de verificação do Google mantido
+
+Sitemap:
+https://pjvirtual.vercel.app/sitemap.xml
+
+No GitHub:
 1. Descompacte este ZIP.
-2. Selecione TODOS os arquivos de dentro.
-3. Arraste todos juntos em Add file > Upload files.
-4. Confira que aparecem aproximadamente 22 arquivos.
-5. Clique em Commit changes.
-6. A Vercel fará o novo deploy automaticamente.
-
-NÃO ENVIE O ZIP FECHADO.
+2. Envie TODOS os arquivos de dentro para a raiz do repositório.
+3. Commit changes.
+4. Aguarde o novo deploy da Vercel ficar Ready.
+5. Teste no navegador:
+   https://pjvirtual.vercel.app/sitemap.xml
+6. No Search Console, envie apenas:
+   sitemap.xml
