@@ -1,38 +1,18 @@
-PROJETO BB PJ VERCEL V2
+BB PJ - VERCEL PREMIUM / ARQUIVOS PLANOS
 
-PRONTO PARA VERCEL:
-- index.html está DIRETAMENTE NA RAIZ
-- vercel.json está na raiz
-- assets/ está na raiz
-- todas as landing pages ficam em pastas próprias
-- não há netlify.toml
-- não há build command obrigatório
+Esta versão mantém a facilidade do GitHub:
+- nenhuma landing page fica dentro de pasta;
+- todas as páginas .html ficam na raiz;
+- CSS está embutido em cada página;
+- não depende de assets/styles.css;
+- visual responsivo e mais profissional.
 
-PALAVRAS-CHAVE / LANDING PAGES:
-BB PJ
-BB PJ Login
-Banco do Brasil PJ
-BB Empresas
-BB Digital PJ
-App BB PJ
-Conta PJ Banco do Brasil
-Conta Empresa BB
-BB PJ Pix
-BB PJ Boleto
-BB PJ Atendimento
-BB PJ Telefone
-BB PJ WhatsApp
-Painel PJ
-Senhas PJ
-Atualização Cadastral PJ
-BB PJ MEI
-BB PJ Capital de Giro
+NO GITHUB:
+1. Descompacte este ZIP.
+2. Selecione TODOS os arquivos de dentro.
+3. Arraste todos juntos em Add file > Upload files.
+4. Confira que aparecem aproximadamente 22 arquivos.
+5. Clique em Commit changes.
+6. A Vercel fará o novo deploy automaticamente.
 
-IMPORTANTE PARA SEO:
-O domínio final .vercel.app ainda não foi informado neste pacote.
-Por isso, sitemap.xml e canonical NÃO foram criados com domínio falso.
-Depois que a Vercel gerar o endereço definitivo, adicione o domínio real ao sitemap, robots e canonical.
-
-DEPLOY:
-Coloque TODOS estes arquivos diretamente na raiz do repositório GitHub.
-Na Vercel, o Root Directory deve ser a própria raiz do repositório.
+NÃO ENVIE O ZIP FECHADO.

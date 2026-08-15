@@ -4,15 +4,390 @@
 <title>BB PJ: serviços, acesso e canais para empresas | Guia PJ Empresas</title>
 <meta name="description" content="Guia independente sobre BB PJ, BB Digital PJ, App BB PJ, Banco do Brasil PJ, Conta Empresa BB, Pix, boleto, atendimento e outros serviços para empresas.">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="stylesheet" href="/assets/styles.css"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-</head><body>
+<style>
+
+:root{
+  --bg:#f3f7fa;
+  --surface:#ffffff;
+  --surface-2:#f8fbfd;
+  --ink:#102235;
+  --muted:#64748b;
+  --line:#dfe8ef;
+  --navy:#143b5d;
+  --navy-2:#0e2c46;
+  --teal:#0d7c78;
+  --teal-2:#12a39b;
+  --aqua:#e8f7f5;
+  --gold:#f3bd5b;
+  --shadow:0 18px 60px rgba(23,59,93,.10);
+  --shadow-sm:0 10px 28px rgba(23,59,93,.07);
+  --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 10% 0%,rgba(18,163,155,.08),transparent 24rem),
+    radial-gradient(circle at 95% 10%,rgba(20,59,93,.08),transparent 28rem),
+    var(--bg);
+  color:var(--ink);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.shell{width:min(1180px,calc(100% - 34px));margin:auto}
+.topline{
+  background:linear-gradient(90deg,var(--navy-2),var(--navy));
+  color:#dce8f2;
+  font-size:.84rem;
+  text-align:center;
+  padding:9px 12px;
+  letter-spacing:.01em;
+}
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,255,255,.92);
+  border-bottom:1px solid rgba(223,232,239,.9);
+  backdrop-filter:blur(16px);
+}
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.logo{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-weight:950;
+  letter-spacing:-.035em;
+  font-size:1.18rem;
+  color:var(--navy);
+}
+.logo::before{
+  content:"";
+  width:34px;height:34px;border-radius:10px;
+  background:
+    linear-gradient(135deg,var(--teal),var(--navy));
+  box-shadow:inset 0 0 0 7px rgba(255,255,255,.12);
+}
+.logo span{color:var(--teal)}
+nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+nav a{
+  text-decoration:none;
+  color:#526176;
+  font-weight:750;
+  font-size:.91rem;
+  transition:.18s ease;
+}
+nav a:hover{color:var(--teal)}
+.hero{padding:56px 0 34px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr);
+  gap:22px;
+  align-items:stretch;
+}
+.hero-main{
+  position:relative;
+  overflow:hidden;
+  padding:46px;
+  border:1px solid var(--line);
+  border-radius:30px;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.98),rgba(247,251,252,.96));
+  box-shadow:var(--shadow);
+}
+.hero-main::after{
+  content:"";
+  position:absolute;
+  width:320px;height:320px;
+  border-radius:50%;
+  right:-120px;top:-140px;
+  background:radial-gradient(circle,var(--aqua),transparent 70%);
+  pointer-events:none;
+}
+.hero-side{
+  position:relative;
+  overflow:hidden;
+  padding:30px;
+  border-radius:30px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(255,255,255,.12),transparent 13rem),
+    linear-gradient(155deg,var(--navy),var(--navy-2) 55%,#0d615f);
+  box-shadow:var(--shadow);
+}
+.hero-side::after{
+  content:"";
+  position:absolute;
+  right:-45px;bottom:-55px;
+  width:170px;height:170px;
+  border-radius:42px;
+  transform:rotate(22deg);
+  border:1px solid rgba(255,255,255,.12);
+}
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 11px;
+  border-radius:999px;
+  color:var(--teal);
+  background:var(--aqua);
+  font-size:.75rem;
+  font-weight:950;
+  letter-spacing:.085em;
+  text-transform:uppercase;
+}
+.kicker::before{
+  content:"";
+  width:7px;height:7px;border-radius:50%;
+  background:var(--teal-2);
+  box-shadow:0 0 0 4px rgba(18,163,155,.12);
+}
+h1{
+  margin:18px 0 16px;
+  max-width:900px;
+  font-size:clamp(2.55rem,5.5vw,5rem);
+  line-height:.98;
+  letter-spacing:-.06em;
+  color:var(--ink);
+}
+h2{
+  margin:0 0 12px;
+  font-size:clamp(1.8rem,3vw,2.7rem);
+  line-height:1.12;
+  letter-spacing:-.04em;
+}
+h3{margin:0 0 8px;font-size:1.12rem}
+.lead{
+  max-width:800px;
+  margin:0;
+  color:var(--muted);
+  font-size:1.15rem;
+}
+.btnrow{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:48px;
+  padding:0 18px;
+  border-radius:13px;
+  text-decoration:none;
+  font-weight:850;
+  border:1px solid var(--navy);
+  transition:.18s ease;
+}
+.btn.primary{
+  background:linear-gradient(135deg,var(--navy),#1a527a);
+  color:#fff;
+  box-shadow:0 10px 22px rgba(20,59,93,.18);
+}
+.btn.ghost{background:#fff;color:var(--navy)}
+.btn:hover{transform:translateY(-2px)}
+.warning{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-top:24px;
+  padding:15px 16px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+  color:#526176;
+  font-size:.92rem;
+}
+.warning::before{
+  content:"i";
+  display:grid;
+  place-items:center;
+  width:22px;height:22px;
+  flex:0 0 22px;
+  border-radius:50%;
+  background:var(--aqua);
+  color:var(--teal);
+  font-weight:900;
+}
+.hero-side h2{font-size:1.55rem;margin-bottom:7px}
+.hero-side p{margin:0;color:#d7e5ee}
+.quick{display:grid;gap:10px;margin-top:18px}
+.quick a{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:13px 14px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;
+  background:rgba(255,255,255,.08);
+  text-decoration:none;
+  font-weight:800;
+  transition:.18s ease;
+}
+.quick a::after{content:"→";opacity:.8}
+.quick a:hover{background:rgba(255,255,255,.14);transform:translateX(2px)}
+section{padding:46px 0}
+.section-head{max-width:820px;margin-bottom:24px}
+.section-head .lead{font-size:1.03rem}
+.cluster{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+}
+.tile{
+  position:relative;
+  overflow:hidden;
+  min-height:188px;
+  display:flex;
+  flex-direction:column;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:linear-gradient(180deg,#fff,var(--surface-2));
+  box-shadow:var(--shadow-sm);
+  transition:.2s ease;
+}
+.tile::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;
+  width:100%;height:4px;
+  background:linear-gradient(90deg,var(--teal),var(--navy));
+  opacity:.85;
+}
+.tile:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 46px rgba(23,59,93,.12);
+}
+.badge{
+  display:inline-flex;
+  align-self:flex-start;
+  margin-bottom:10px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:var(--aqua);
+  color:var(--teal);
+  font-size:.69rem;
+  font-weight:950;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.tile p{margin:0 0 16px;color:var(--muted);font-size:.94rem}
+.tile a{
+  margin-top:auto;
+  text-decoration:none;
+  color:var(--teal);
+  font-weight:900;
+  font-size:.93rem;
+}
+.split{
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);
+  gap:22px;
+  align-items:start;
+}
+.panel{
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:#fff;
+  box-shadow:var(--shadow-sm);
+  padding:30px;
+}
+.article h2{
+  margin-top:32px;
+  font-size:1.7rem;
+}
+.article h2:first-child{margin-top:0}
+.article p,.article li{color:var(--muted)}
+.article ul{padding-left:20px}
+.side{position:sticky;top:98px}
+.side h3{font-size:1rem;color:var(--navy);margin-bottom:8px}
+.side a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:11px 0;
+  border-bottom:1px solid var(--line);
+  text-decoration:none;
+  font-weight:750;
+  color:#45596f;
+}
+.side a::after{content:"›";color:var(--teal);font-size:1.2rem}
+.side a:hover{color:var(--teal)}
+.breadcrumbs{
+  margin-bottom:15px;
+  color:#718096;
+  font-size:.87rem;
+}
+.breadcrumbs a{text-decoration:none;color:var(--teal)}
+.cta{
+  position:relative;
+  overflow:hidden;
+  margin-top:32px;
+  padding:28px;
+  border-radius:22px;
+  color:#fff;
+  background:linear-gradient(135deg,var(--navy),#0d6d69);
+}
+.cta::after{
+  content:"";
+  position:absolute;
+  right:-50px;top:-60px;
+  width:170px;height:170px;border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+.cta h2{position:relative;z-index:1;font-size:1.55rem}
+.cta p{position:relative;z-index:1;color:#dbeceb}
+.cta .btn{
+  position:relative;z-index:1;
+  background:#fff;color:var(--navy);border-color:#fff;
+}
+footer{
+  margin-top:48px;
+  padding:42px 0;
+  background:linear-gradient(135deg,var(--navy-2),#102f49);
+  color:#cad8e4;
+}
+.foot{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+footer strong{color:#fff;font-size:1rem}
+footer p{margin:.5rem 0 0}
+@media(max-width:1000px){
+  .cluster{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-grid,.split,.foot{grid-template-columns:1fr}
+  .side{position:static}
+}
+@media(max-width:720px){
+  nav{display:none}
+  .hero{padding-top:30px}
+  .hero-main,.hero-side{padding:25px;border-radius:22px}
+  h1{font-size:clamp(2.3rem,12vw,3.6rem)}
+  .cluster{grid-template-columns:1fr}
+  .shell{width:min(100% - 22px,1180px)}
+  .panel{padding:22px}
+}
+
+</style></head><body>
 <div class="topline">Portal independente • conteúdo informativo para empresas</div>
-<header><div class="shell nav"><a class="logo" href="/">Guia <span>PJ Empresas</span></a><nav>
-<a href="/bb-pj/">BB PJ</a>
-<a href="/bb-pj-login/">Login</a>
-<a href="/bb-digital-pj/">BB Digital PJ</a>
-<a href="/conta-empresa-bb/">Conta Empresa</a>
-<a href="/bb-pj-atendimento/">Atendimento</a>
+<header><div class="shell nav"><a class="logo" href="/index.html">Guia <span>PJ Empresas</span></a><nav>
+<a href="/bb-pj.html">BB PJ</a>
+<a href="/bb-pj-login.html">Login</a>
+<a href="/bb-digital-pj.html">BB Digital PJ</a>
+<a href="/conta-empresa-bb.html">Conta Empresa</a>
+<a href="/bb-pj-atendimento.html">Atendimento</a>
 </nav></div></header>
 <main>
 <section class="hero"><div class="shell hero-grid">
@@ -20,10 +395,10 @@
   <div class="btnrow"><a class="btn primary" href="#palavras">Explorar palavras-chave</a><a class="btn ghost" href="https://bb.com.br/site/pro-seu-negocio/" target="_blank" rel="noopener noreferrer">Canal oficial ↗</a></div>
   <div class="warning"><strong>Portal independente:</strong> não somos o Banco do Brasil e não coletamos senha, conta, token, cartão ou pagamentos.</div></div>
   <aside class="hero-side"><h2>Atalhos de pesquisa</h2><p>Novos clusters adicionados nesta versão.</p>
-  <div class="quick"><a href="/banco-do-brasil-pj/">Banco do Brasil PJ</a><a href="/bb-empresas/">BB Empresas</a><a href="/conta-empresa-bb/">Conta Empresa BB</a><a href="/painel-pj/">Painel PJ</a><a href="/senhas-pj/">Senhas PJ</a></div></aside>
+  <div class="quick"><a href="/banco-do-brasil-pj.html">Banco do Brasil PJ</a><a href="/bb-empresas.html">BB Empresas</a><a href="/conta-empresa-bb.html">Conta Empresa BB</a><a href="/painel-pj.html">Painel PJ</a><a href="/senhas-pj.html">Senhas PJ</a></div></aside>
 </div></section>
-<section id="palavras"><div class="shell"><div class="section-head"><span class="kicker">Estrutura SEO</span><h2>Landing pages por intenção de busca</h2><p class="lead">Mantivemos as palavras-chave anteriores e adicionamos novos termos relacionados a empresas.</p></div><div class="cluster"><article class="tile"><div class="badge">Guia</div><h3>BB PJ Login</h3><p>Acesso e segurança para conta empresarial.</p><a href="/bb-pj-login/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB Digital PJ</h3><p>Internet banking empresarial.</p><a href="/bb-digital-pj/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>App BB PJ</h3><p>Aplicativo para empresas.</p><a href="/app-bb-pj/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Conta PJ</h3><p>Conta digital empresarial.</p><a href="/conta-pj-banco-do-brasil/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Conta Empresa BB</h3><p>Gestão e serviços empresariais.</p><a href="/conta-empresa-bb/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ Pix</h3><p>Pagamentos e recebimentos via Pix.</p><a href="/bb-pj-pix/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ Boleto</h3><p>Cobrança e boletos.</p><a href="/bb-pj-boleto/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ Atendimento</h3><p>Suporte para empresas.</p><a href="/bb-pj-atendimento/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ Telefone</h3><p>Confirmação de contatos.</p><a href="/bb-pj-telefone/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ WhatsApp</h3><p>Canal empresarial no WhatsApp.</p><a href="/bb-pj-whatsapp/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Painel PJ</h3><p>Organização financeira.</p><a href="/painel-pj/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Senhas PJ</h3><p>Segurança e acesso.</p><a href="/senhas-pj/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Atualização Cadastral PJ</h3><p>Dados da empresa.</p><a href="/atualizacao-cadastral-pj/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ MEI</h3><p>Soluções para MEI.</p><a href="/bb-pj-mei/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ Capital de Giro</h3><p>Crédito empresarial.</p><a href="/bb-pj-capital-de-giro/">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Banco do Brasil PJ</h3><p>Visão geral dos serviços.</p><a href="/banco-do-brasil-pj/">Abrir landing page →</a></article></div></div></section>
-<section><div class="shell split"><article class="panel article"><h2>Estrutura diferente do projeto anterior</h2><p>Esta versão usa uma arquitetura em clusters, com home em formato de painel e novas landing pages para ampliar a cobertura de buscas relacionadas a BB PJ.</p><h2>Segurança</h2><p>Não há login, coleta de dados ou processamento de pagamentos. Links de operação levam para páginas oficiais.</p></article><aside class="panel side"><h3>Cluster BB PJ</h3><a href="/bb-pj-login/">BB PJ Login</a><a href="/banco-do-brasil-pj/">Banco do Brasil PJ</a><a href="/bb-empresas/">BB Empresas</a><a href="/bb-digital-pj/">BB Digital PJ</a><a href="/conta-empresa-bb/">Conta Empresa BB</a><a href="/painel-pj/">Painel PJ</a><a href="/senhas-pj/">Senhas PJ</a><a href="/atualizacao-cadastral-pj/">Atualização Cadastral PJ</a><a href="/bb-pj-mei/">BB PJ MEI</a><a href="/bb-pj-capital-de-giro/">Capital de Giro</a></aside></div></section>
+<section id="palavras"><div class="shell"><div class="section-head"><span class="kicker">Estrutura SEO</span><h2>Landing pages por intenção de busca</h2><p class="lead">Mantivemos as palavras-chave anteriores e adicionamos novos termos relacionados a empresas.</p></div><div class="cluster"><article class="tile"><div class="badge">Guia</div><h3>BB PJ Login</h3><p>Acesso e segurança para conta empresarial.</p><a href="/bb-pj-login.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB Digital PJ</h3><p>Internet banking empresarial.</p><a href="/bb-digital-pj.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>App BB PJ</h3><p>Aplicativo para empresas.</p><a href="/app-bb-pj.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Conta PJ</h3><p>Conta digital empresarial.</p><a href="/conta-pj-banco-do-brasil.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Conta Empresa BB</h3><p>Gestão e serviços empresariais.</p><a href="/conta-empresa-bb.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ Pix</h3><p>Pagamentos e recebimentos via Pix.</p><a href="/bb-pj-pix.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ Boleto</h3><p>Cobrança e boletos.</p><a href="/bb-pj-boleto.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ Atendimento</h3><p>Suporte para empresas.</p><a href="/bb-pj-atendimento.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ Telefone</h3><p>Confirmação de contatos.</p><a href="/bb-pj-telefone.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ WhatsApp</h3><p>Canal empresarial no WhatsApp.</p><a href="/bb-pj-whatsapp.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Painel PJ</h3><p>Organização financeira.</p><a href="/painel-pj.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Senhas PJ</h3><p>Segurança e acesso.</p><a href="/senhas-pj.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Atualização Cadastral PJ</h3><p>Dados da empresa.</p><a href="/atualizacao-cadastral-pj.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ MEI</h3><p>Soluções para MEI.</p><a href="/bb-pj-mei.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>BB PJ Capital de Giro</h3><p>Crédito empresarial.</p><a href="/bb-pj-capital-de-giro.html">Abrir landing page →</a></article><article class="tile"><div class="badge">Guia</div><h3>Banco do Brasil PJ</h3><p>Visão geral dos serviços.</p><a href="/banco-do-brasil-pj.html">Abrir landing page →</a></article></div></div></section>
+<section><div class="shell split"><article class="panel article"><h2>Estrutura diferente do projeto anterior</h2><p>Esta versão usa uma arquitetura em clusters, com home em formato de painel e novas landing pages para ampliar a cobertura de buscas relacionadas a BB PJ.</p><h2>Segurança</h2><p>Não há login, coleta de dados ou processamento de pagamentos. Links de operação levam para páginas oficiais.</p></article><aside class="panel side"><h3>Cluster BB PJ</h3><a href="/bb-pj-login.html">BB PJ Login</a><a href="/banco-do-brasil-pj.html">Banco do Brasil PJ</a><a href="/bb-empresas.html">BB Empresas</a><a href="/bb-digital-pj.html">BB Digital PJ</a><a href="/conta-empresa-bb.html">Conta Empresa BB</a><a href="/painel-pj.html">Painel PJ</a><a href="/senhas-pj.html">Senhas PJ</a><a href="/atualizacao-cadastral-pj.html">Atualização Cadastral PJ</a><a href="/bb-pj-mei.html">BB PJ MEI</a><a href="/bb-pj-capital-de-giro.html">Capital de Giro</a></aside></div></section>
 </main>
 <footer><div class="shell foot"><div><strong>Guia PJ Empresas</strong><p>Projeto informativo independente sobre buscas relacionadas a BB PJ.</p></div><div><strong>Privacidade</strong><p>Não solicitamos senha, conta, cartão, token ou pagamentos.</p></div></div></footer>
 </body></html>
